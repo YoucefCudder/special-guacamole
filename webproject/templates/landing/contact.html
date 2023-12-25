@@ -1,0 +1,26 @@
+{% load bulma_tags %}
+{% load crispy_forms_tags %}
+
+
+<!-- contact form homepage -->
+{% block content %}
+<div class="container">
+
+    <div class="row modal fade" id="modal">
+        <div class="col-md-12 modal-dialog" id="dialog" >
+            <h1 class="text-center">Contact </h1>
+            <hr>
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="field">
+                    <form action="" class=""></form>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

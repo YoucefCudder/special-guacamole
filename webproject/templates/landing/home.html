@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load bulma_tags %}
+{% load crispy_forms_tags %}
+
+
+<html lang="fr">
+<head>
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/15181efa86.js"></script>
+    <script src="static/style.css"></script>
+    <title>{% block title %} Page d'accueil {% endblock %} </title>
+
+
+</head>
+{% block content %}
+<body>
+<section class="hero is-medium">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-1 ">Hello Parallax</h1>
+            <h2 class="subtitle">A simple boilerplate for setting up parallax <br> using the Bulma Hero container.</h2>
+            <a class="button is-white is-medium is-inverted" href="#">Learn More&ensp;<i
+                    class="fad fa-chevron-right"></i></a>
+        </div>
+    </div>
+</section>
+<section class="hero is-large " id="parallax-1">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-6 is-offset-6">
+                    <h1 class="title is-1 ">Lorem Ipsum</h1>
+                    <hr class="content-divider">
+                    <h2 class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit explicabo
+                        amet magni illum eum voluptate! Eveniet voluptatem nam magnam necessitatibus.</h2>
+                    <a class="button is-white is-inverted" href="#">Next&ensp;<i class="fad fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta va">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-6">
+                <h1 class="title is-1 ">Adipisicing Elit</h1>
+                <hr class="content-divider">
+                <h2 class="subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas ut nulla maiores,
+                    beatae voluptas sunt excepturi deserunt vero. Beatae est ratione quia neque molestias, cum
+                    asperiores quibusdam rem illum, debitis dolorem natus, eos fuga eveniet numquam ab officia
+                    reiciendis inventore. Tempore repudiandae exercitationem quisquam? Fugiat!</h2>
+            </div>
+            <form class="column is-6" method="post">
+                 {% csrf_token %}
+                {{ form|crispy }}
+                <div class="field">
+                    <label class="label">Prénom</label>
+                    {{ form.first_name }}
+                    <div class="control">
+                        <input class="input is-medium" placeholder="Jon" type="text">
+                    </div>
+                </div>
+                <br>
+                <div class="field">
+                    {{ form.last_name }}
+                    <label class="label">Nom</label>
+                    <div class="control">
+                        <input class="input is-medium" placeholder=" Snow" type="text">
+                    </div>
+                </div>
+                <br>
+                <div class="field">
+                    {{ form.email }}
+                    <label class="label">Email</label>
+                    <div class="control">
+                        <input class="input is-medium" placeholder="jon@winterfell.com" type="email">
+                    </div>
+                </div>
+                <br>
+                <div class="field">
+                    {{ form.message }}
+                    <label class="label">Message</label>
+                    <div class="control">
+                        <input class="input is-medium" placeholder="Tapez votre message ici" type="text">
+                    </div>
+                </div>
+                <br>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-black is-rounded is-outlined">Submit</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</section>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <!--
+          <p>
+          <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+          is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        </p>
+        -->
+    </div>
+</footer>
+</body>
+{% endblock %}
+
+</html>
